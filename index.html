@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="title">Farras Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/jpeg" href="WhatsApp%20Image%202026-05-09%20at%207.03.03%20PM.jpeg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="WhatsApp%20Image%202026-05-09%20at%207.03.03%20PM.jpeg" />
+  <meta name="theme-color" content="#0b1410" />
+</head>
+<body>
+  <!-- Futuristic loading / splash -->
+  <section class="splash" id="splash" aria-live="polite" aria-busy="true">
+    <div class="splash__bg" aria-hidden="true"></div>
+    <div class="splash__content">
+      <div class="logo" aria-hidden="true">
+        <span class="logo__dot"></span>
+        <span class="logo__ring"></span>
+      </div>
+      <h1 class="splash__title" data-i18n="loadingTitle">Initializing Experience</h1>
+      <p class="splash__subtitle" data-i18n="loadingSub">Preparing interface, data, and visuals…</p>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress__bar" id="progressBar"></div>
+      </div>
+      <div class="glow-lines" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Shell -->
+  <div class="app" id="app" hidden>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__name">Al-Farras</span>
+        <span class="brand__tag" data-i18n="brandTag">yellow-green portfs</span>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#home" class="nav__link"><span data-i18n="navHome">Home</span></a>
+        <a href="#about" class="nav__link"><span data-i18n="navAbout">About</span></a>
+        <a href="#projects" class="nav__link"><span data-i18n="navProjects">Projects</span></a>
+        <a href="#skills" class="nav__link"><span data-i18n="navSkills">Skills</span></a>
+        <a href="#faq" class="nav__link"><span data-i18n="navFaq">FAQ</span></a>
+        <a href="#contact" class="nav__link"><span data-i18n="navContact">Contact</span></a>
+      </nav>
+
+      <div class="controls" role="group" aria-label="Preferences">
+        <button class="chip" id="langBtn" type="button" aria-label="Change language" title="Language">
+          <span class="chip__label" id="langLabel">EN</span>
+          <span class="chip__icon" aria-hidden="true">⟲</span>
+        </button>
+
+        <button class="chip" id="themeBtn" type="button" aria-label="Toggle theme" title="Theme">
+          <span class="chip__label" id="themeLabel">DARK</span>
+          <span class="chip__icon" aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow" data-i18n="heroEyebrow">Developer • Designer • Engineer</p>
+            <h2 class="hero__title" data-i18n="heroTitle">Build futuristic interfaces with practical performance.</h2>
+            <p class="hero__desc" data-i18n="heroDesc">
+              I craft clean UI systems, fast front-ends, and delightful micro-interactions.
+              This portfolio uses a yellow/green theme, one-click language switching, and smooth UI components.
+            </p>
+
+            <div class="hero__cta">
+              <a class="btn" href="#projects" data-i18n="btnView">View work</a>
+              <a class="btn btn--ghost" href="#contact" data-i18n="btnHire">Contact</a>
+            </div>
+
+            <div class="hero__badges" aria-label="Highlights">
+              <span class="badge" data-i18n="badgeFast">Fast UI</span>
+              <span class="badge" data-i18n="badgeAccessible">Accessible</span>
+              <span class="badge" data-i18n="badgeClean">Clean code</span>
+            </div>
+          </div>
+
+          <div class="hero__panel" aria-label="Status">
+            <div class="panel panel--glow">
+              <div class="panel__header">
+                <span class="panel__title" data-i18n="panelTitle">Live Snapshot</span>
+                <span class="pill" id="statusPill">ONLINE</span>
+              </div>
+
+              <div class="panel__rows">
+                <div class="row">
+                  <span class="row__k" data-i18n="statusLang">Language</span>
+                  <span class="row__v" id="statusLang">EN</span>
+                </div>
+                <div class="row">
+                  <span class="row__k" data-i18n="statusTheme">Theme</span>
+                  <span class="row__v" id="statusTheme">Dark</span>
+                </div>
+                <div class="row">
+                  <span class="row__k" data-i18n="statusFocus">Focus</span>
+                  <span class="row__v" data-i18n="statusFocusV">UI + Performance</span>
+                </div>
+              </div>
+
+              <div class="panel__meter" aria-hidden="true">
+                <div class="meter">
+                  <div class="meter__label" data-i18n="meterLabel">System readiness</div>
+                  <div class="meter__track">
+                    <div class="meter__fill" id="meterFill"></div>
+                  </div>
+                  <div class="meter__value" id="meterValue">92%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero__avatar" aria-hidden="true">
+              <div class="avatar">
+                <img
+                  class="avatar__img"
+                  src="WhatsApp%20Image%202026-05-09%20at%207.03.03%20PM.jpeg"
+                  alt="Profile photo"
+                />
+                <div class="avatar__ring"></div>
+                <div class="avatar__core"></div>
+                <div class="avatar__spark"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section__head">
+          <h3 class="section__title" data-i18n="aboutMeTitle">About Me</h3>
+          <p class="section__sub" data-i18n="aboutMeSub">My name is Raid, well you can call me al. I born in Banda Aceh, now i school in MAN Model Banda Aceh. I make a super futuristic portfolio and nice combo color for this project, well you can see at my poftrolio, WELCOME TO MY SUPER OVER POWER PORTFOLIO.</p>
+        </div>
+
+        <div class="aboutCard">
+          <div class="aboutGrid">
+            <div class="aboutCol">
+              <p class="aboutText" data-i18n="aboutMeText1">I build fast, clean, and futuristic user interfaces.</p>
+              <p class="aboutText" data-i18n="aboutMeText2">I love design systems, micro-interactions, and performance-first front-end engineering.</p>
+            </div>
+
+            <div class="aboutCol">
+              <div class="aboutStats" aria-label="Highlights">
+                <div class="stat">
+                  <div class="stat__k" data-i18n="aboutStat1K">Focus</div>
+                  <div class="stat__v" data-i18n="aboutStat1V">UI + Performance</div>
+                </div>
+                <div class="stat">
+                  <div class="stat__k" data-i18n="aboutStat2K">Style</div>
+                  <div class="stat__v" data-i18n="aboutStat2V">Clean & Futuristic</div>
+                </div>
+                <div class="stat">
+                  <div class="stat__k" data-i18n="aboutStat3K">Workflow</div>
+                  <div class="stat__v" data-i18n="aboutStat3V">Iterate & Polish</div>
+                </div>
+              </div>
+
+              <div class="aboutBadges" aria-label="Skills">
+                <span class="badge" data-i18n="aboutBadge1">Design Systems</span>
+                <span class="badge" data-i18n="aboutBadge2">Accessibility</span>
+                <span class="badge" data-i18n="aboutBadge3">Motion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section__head">
+          <h3 class="section__title" data-i18n="projectsTitle">Skills</h3>
+          <p class="section__sub" data-i18n="projectsSub">A small carousel of highlights (with keyboard support) if you click right arrow/left arrow the carrousel will move.</p>
+        </div>
+
+        <div class="carousel" data-carousel>
+          <div class="carousel__viewport">
+            <div class="carousel__track" id="carouselTrack">
+              <article class="card" tabindex="0">
+                <div class="card__top">
+                  <span class="card__chip">UI</span>
+                  <span class="card__meta">01</span>
+                </div>
+                <h4 class="card__title" data-i18n="proj1Title">Neon Landing System</h4>
+                <p class="card__desc" data-i18n="proj1Desc">A landing UI with smooth transitions, responsive layout, and strong contrast.</p>
+                <ul class="card__list">
+                  <li data-i18n="proj1a">Design tokens</li>
+                  <li data-i18n="proj1b">Motion micro-interactions</li>
+                  <li data-i18n="proj1c">Performance-first</li>
+                </ul>
+              </article>
+
+              <article class="card" tabindex="0">
+                <div class="card__top">
+                  <span class="card__chip">DX</span>
+                  <span class="card__meta">02</span>
+                </div>
+                <h4 class="card__title" data-i18n="proj2Title">Dashboard Console</h4>
+                <p class="card__desc" data-i18n="proj2Desc">A futuristic admin UI with theme toggle and data widgets.</p>
+                <ul class="card__list">
+                  <li data-i18n="proj2a">Accessible components</li>
+                  <li data-i18n="proj2b">Reusable patterns</li>
+                  <li data-i18n="proj2c">Keyboard-friendly</li>
+                </ul>
+              </article>
+
+              <article class="card" tabindex="0">
+                <div class="card__top">
+                  <span class="card__chip">Web</span>
+                  <span class="card__meta">03</span>
+                </div>
+                <h4 class="card__title" data-i18n="proj3Title">Realtime Portfolio</h4>
+                <p class="card__desc" data-i18n="proj3Desc">A portfolio that feels alive: loading screen, carousel, and accordion content.</p>
+                <ul class="card__list">
+                  <li data-i18n="proj3a">Futuristic loading</li>
+                  <li data-i18n="proj3b">1-click language swap</li>
+                  <li data-i18n="proj3c">Clean UI layout</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel__controls">
+            <button class="iconBtn" type="button" data-prev aria-label="Previous slide">‹</button>
+            <div class="dots" id="carouselDots" aria-label="Slide indicators"></div>
+            <button class="iconBtn" type="button" data-next aria-label="Next slide">›</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section__head">
+          <h3 class="section__title" data-i18n="skillsTitle">Accordion</h3>
+          <p class="section__sub" data-i18n="skillsSub">Expand sections to see details.</p>
+        </div>
+
+        <div class="accordion" data-accordion>
+          <div class="accItem" data-acc-item>
+            <button class="accBtn" type="button" aria-expanded="false" data-acc-toggle>
+              <span class="accBtn__title" data-i18n="acc1Title">Frontend Craft</span>
+              <span class="accBtn__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accPanel" hidden>
+              <div class="accPanel__inner">
+                <ul class="accList">
+                  <li data-i18n="acc1a">Design systems & tokens</li>
+                  <li data-i18n="acc1b">Responsive layouts</li>
+                  <li data-i18n="acc1c">Smooth animations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accItem" data-acc-item>
+            <button class="accBtn" type="button" aria-expanded="false" data-acc-toggle>
+              <span class="accBtn__title" data-i18n="acc2Title">Engineering Habits</span>
+              <span class="accBtn__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accPanel" hidden>
+              <div class="accPanel__inner">
+                <ul class="accList">
+                  <li data-i18n="acc2a">Clean architecture</li>
+                  <li data-i18n="acc2b">Performance profiling</li>
+                  <li data-i18n="acc2c">Keyboard & accessibility</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accItem" data-acc-item>
+            <button class="accBtn" type="button" aria-expanded="false" data-acc-toggle>
+              <span class="accBtn__title" data-i18n="acc3Title">Tools & Workflow</span>
+              <span class="accBtn__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accPanel" hidden>
+              <div class="accPanel__inner">
+                <p class="muted" data-i18n="acc3Text">I ship iteratively: small changes, quick feedback, polished outcomes.</p>
+                <div class="tagRow" aria-label="Tech tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section__head">
+          <h3 class="section__title" data-i18n="faqTitle">FAQ</h3>
+          <p class="section__sub" data-i18n="faqSub">Quick answers, designed for clarity.</p>
+        </div>
+
+        <div class="accordion accordion--compact" data-accordion>
+          <div class="accItem" data-acc-item>
+            <button class="accBtn" type="button" aria-expanded="false" data-acc-toggle>
+              <span class="accBtn__title" data-i18n="faq1Q">Can I switch theme?</span>
+              <span class="accBtn__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accPanel" hidden>
+              <div class="accPanel__inner">
+                <p class="muted" data-i18n="faq1A">Yes. Use the theme chip in the header (light/dark). It persists on refresh.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accItem" data-acc-item>
+            <button class="accBtn" type="button" aria-expanded="false" data-acc-toggle>
+              <span class="accBtn__title" data-i18n="faq2Q">Language switch is one click?</span>
+              <span class="accBtn__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accPanel" hidden>
+              <div class="accPanel__inner">
+                <p class="muted" data-i18n="faq2A">Yes. One click toggles between English and Indonesian instantly (no reload).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accItem" data-acc-item>
+            <button class="accBtn" type="button" aria-expanded="false" data-acc-toggle>
+              <span class="accBtn__title" data-i18n="faq3Q">Carousel supports keyboard?</span>
+              <span class="accBtn__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accPanel" hidden>
+              <div class="accPanel__inner">
+                <p class="muted" data-i18n="faq3A">Use ←/→ while focused on the carousel to change slides. Dots are clickable too.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--contact" id="contact">
+        <div class="section__head">
+          <h3 class="section__title" data-i18n="contactTitle">Contact</h3>
+          <p class="section__sub" data-i18n="contactSub">Let’s build something bright and fast.</p>
+        </div>
+
+        <div class="contactCard">
+          <div class="contactCard__left">
+            <div class="contactRow">
+              <span class="contactRow__k" data-i18n="contactEmail">Email</span>
+              <a class="contactLink" href="mailto:hello@example.com" aria-label="Email">
+                hello@example.com
+              </a>
+            </div>
+            <div class="contactRow">
+              <span class="contactRow__k" data-i18n="contactRole">Role</span>
+              <span class="contactRow__v" data-i18n="contactRoleV">Frontend Developer</span>
+            </div>
+            <div class="contactRow">
+              <span class="contactRow__k" data-i18n="contactLocation">Location</span>
+              <span class="contactRow__v" data-i18n="contactLocationV">Remote / Indonesia</span>
+            </div>
+
+            <div class="socialRow" aria-label="Social links">
+              <a class="socialIcon" href="https://wa.me/6281378435829" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+                <span aria-hidden="true">📞</span>
+              </a>
+              <a class="socialIcon" href="https://instagram.com/alfarras_42" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <span aria-hidden="true">📟</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="contactCard__right" id="contactForm">
+            <label class="field">
+              <span class="field__label" data-i18n="formName">Name</span>
+              <input class="field__input" name="name" placeholder="Your name" required />
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="formMessage">Message</span>
+              <textarea class="field__input" name="message" placeholder="Write your message" rows="4" required></textarea>
+            </label>
+            <button class="btn btn--primary" type="submit" data-i18n="formSend">Send message</button>
+            <p class="formNote" id="formNote" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span data-i18n="footerCopy">© <span id="year"></span> Farras. All rights reserved.</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
